@@ -124,6 +124,15 @@ class SiteController extends Controller
 		));
 	}
 
+	public function actionJson()
+	{
+		$parser = new CMarkdownParser();
+		Yii::app()->clientScript->registerCss('TextHighligther', file_get_contents($parser->getDefaultCssFile()));
+
+		$this->render('json', array(
+			'parser'=>$parser,
+		));
+	}
 	public function actionMaintenance()
 	{
 		$this->layout = '/layouts/maintenance';

@@ -145,6 +145,7 @@ class Bootstrap extends CApplicationComponent
 		/** @var CClientScript $cs */
 		$cs = Yii::app()->getClientScript();
 		$cs->registerCoreScript('jquery');
+		$cs->registerScriptFile($this->getAssetsUrl() . '/js/bootstrap.bootbox.min.js', $position);
 		$cs->registerScriptFile($this->getAssetsUrl().'/js/bootstrap.js', $position);
 	}
 

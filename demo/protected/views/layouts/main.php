@@ -61,6 +61,7 @@ mixpanel.init("733930f08f73894be317b7fdbfd15229");</script><!-- end Mixpanel -->
 			'items'=>array(
 				array('label'=>'Demo', 'url'=>Yii::app()->homeUrl,
 						'active'=>Yii::app()->controller->id === 'site' && Yii::app()->controller->action->id === 'index'),
+				array('label'=>'JsonGrid', 'url'=>array('site/json')),
 				array('label'=>'Setup', 'url'=>array('site/setup')),
 			),
 			'htmlOptions'=>array('class'=>'pull-left'),
