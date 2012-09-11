@@ -172,7 +172,7 @@ class TbJEditableColumn extends TbDataColumn
 		$cs->registerScript('TbJEditableColumn#' . $this->id, "
 			jQuery(document).on('{$this->event}','.{$this->cssClass}', function(){
 				var id = jQuery(this).data('rowid');
-				var options = jQuery.extend({$options}, {'submitdata':{id:id,editable:'{$this->grid->id}'}});
+				var options = jQuery.extend(true, {$options}, {'submitdata':{id:id,editable:'{$this->grid->id}'}});
 				jQuery(this).editable('{$this->saveURL}', options);
 			});
 		");
