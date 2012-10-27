@@ -521,29 +521,7 @@ class TbActiveForm extends CActiveForm
 	 */
 	protected function getInputClassName()
 	{
-		if (isset($this->input))
-			return $this->input;
-		else
-		{
-			switch ($this->type)
-			{
-				case self::TYPE_HORIZONTAL:
-					return self::INPUT_HORIZONTAL;
-					break;
-
-				case self::TYPE_INLINE:
-					return self::INPUT_INLINE;
-					break;
-
-				case self::TYPE_SEARCH:
-					return self::INPUT_SEARCH;
-					break;
-
-				case self::TYPE_VERTICAL:
-				default:
-					return self::INPUT_VERTICAL;
-					break;
-			}
-		}
+		if (!isset($this->input)) $this->input='bootstrap.widgets.input.TbInput'.ucfirst($this->type);
+		return $this->input;
 	}
 }
